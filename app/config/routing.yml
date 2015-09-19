@@ -1,0 +1,11 @@
+lamartine_store:
+    resource: "@lamartineStoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+#users:
+ #   type:     rest
+  #  resource: "@AppBundle/Controller/DefaultController"

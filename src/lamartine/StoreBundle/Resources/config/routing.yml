@@ -1,0 +1,3 @@
+lamartine_store_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: lamartineStoreBundle:Default:index }

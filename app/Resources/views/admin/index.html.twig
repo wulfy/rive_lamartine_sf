@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+   
+<div id="slide3" class="slide">
+<div class="listNote">
+  {{ include('@views/default/notes_liste.html.twig', {'notes': notes}) }}
+
+</div>
+</div>
+
+<a href="{{ path('manage_notes')}} ">Nouveau </a>
+
+{{ include('lamartineStoreBundle:Default:new.html.twig' , {'form': form}) }}
+
+{% endblock %}

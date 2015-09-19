@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+   <div id="top"></div>
+<div id="content" class="content">
+  <div id="scrolltop" class="scroll-top-wrapper hvr-icon-float-away">
+  </div>
+  <div id="slide1" class="slide">
+
+  	<div class="titre">
+       <h2>
+        RIVE LAMARTINE
+      </h2>
+    </div>
+     
+     <video class="videobg" width="100%" height="100%" loop="" autoplay=""> 
+
+     {% image 'assets/images/fond2.mp4' %}
+    	<source src="{{ asset_url }}" type="video/mp4" /> 
+	{% endimage %}
+      
+       <param name="wmode" value="transparent" /> 
+       <!--[if lte IE 6 ]>
+       <embed src="http://www.youtube.com/v/HVMoJqg41Bw" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="400" height="222"></embed>
+       <![endif]--> 
+       
+     </video> 
+    <div class="menu">
+      <div class="menuitem">
+          <div class="action" data-target="#slide2"></div>
+          <div id="helprec" class="hvr-sweep-to-right"> <span>Contactez le conseil syndical ou les artisans</span></div>
+          <button id="help" class="bouton"> <i class="fa fa-envelope big"></i> <br/>Contact </button>
+      </div>
+      <div class="menuitem">
+          <div class="action" data-target="#slide3"></div>
+          <div id="helprec" class="hvr-sweep-to-right"> <span>Infos courantes sur la résidences</span></div>
+          <button id="help" class="bouton"> <i class="fa fa-info big"></i> <br/>Infos </button>
+      </div>
+    </div>
+  </div>
+   <div class="fake slide"> </div>
+  <div id="slide2" class="slide">
+    <div class="formulaire">
+
+        <div id="formcontent">
+           <h1> Contactez le conseil du syndic </h1>
+            
+            <form action="./app/sendmail" method="post"  autocomplete="on" accept-charset="utf-8">
+          <p> <label for="username" class="iconic user" > Nom/Prenom <span class="required">*</span></label> <input type="text" name="username" id="username"  required="required" placeholder="Vos noms et prénoms"  /> </p>
+
+          <p> <label for="usermail" class="iconic mail-alt"> E-mail <span class="required">*</span></label> <input type="email" name="usermail" id="usermail" placeholder="Pour que l'on puisse vous recontacter" required="required"  /> </p>
+
+          <p> <label for="subject" class="iconic quote-alt"> Sujet </label> <input type="text" name="subject" id="subject"  placeholder="Le sujet du message" /> </p>
+
+          <p> <label for="message" class="iconic comment"> Message  <span class="required">*</span></label> <textarea name="message" placeholder="Laissez nous un message nous vous répondrons le plus vite possible"  required="required" ></textarea> </p>
+          <p class="indication"> Tous les champs avec une <span class="required">*</span> sont obligatoires</p>
+          
+          <input type="submit" value=" ★  Envoyer !" />   
+
+        </form>   
+      </div>
+
+    </div>
+    <div class="artisans">
+      <h2> Liste des sociétés à contacter</h2>
+      {% image 'assets/images/artisans.jpg' %}
+    	<img src="{{ asset_url }}" class="artisanslogo"/>
+		{% endimage %}
+        <a href="#">Cliquez ici</a>
+      <br/>
+      <h2> Syndic de l'immeuble </h2>
+      <img src="http://www.gerimmo.fr/z/webagency/A_Nexi/oraliagerimo_36960/images/logo.png" class="artisanslogo"/>
+      <a href="http://www.gerimmo.fr/immo,connexion.htm">Extranet</a>
+    </div>
+
+  </div>
+<div id="slide3" class="slide">
+<div class="listNote">
+  {{ include('@views/default/notes_liste.html.twig', {'notes': notes}) }}
+
+</div>
+</div>
+{% endblock %}

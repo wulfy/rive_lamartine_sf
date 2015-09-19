@@ -1,0 +1,56 @@
+<?php
+
+// src/Acme/StoreBundle/Entity/Notes.php
+namespace lamartine\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="users")
+ */
+class Users
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    protected $nom;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    protected $prenom;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    protected $login;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    protected $password;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    protected $inscription_date;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    protected $last_connexion_date;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    protected $role_lvl;
+
+}
