@@ -5,3 +5,4 @@ parameters:
     database_name:      test_project
     database_user:      root
     database_password:  root
+    roles: ["ROLE_ADMIN","ROLE_USER"]

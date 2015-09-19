@@ -1,3 +1,9 @@
 lamartine_store_homepage:
-    path:     /hello/{name}
+    path:     /store/test/{name}
     defaults: { _controller: lamartineStoreBundle:Default:index }
+lamartine_addUser_page:
+    path:     /store/addUser/
+    defaults: { _controller: lamartineStoreBundle:Default:addUser }
+lamartine_addNote_page:
+    path:     /store/addNote/
+    defaults: { _controller: lamartineStoreBundle:Default:addNote }
