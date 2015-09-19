@@ -5,8 +5,8 @@
 
     {% if is_granted('ROLE_ADMIN') %}
       <div>
-        <a href="./notes/edit?id={{note.id}}"> editer </a> &nbsp;&nbsp;
-        <a href="./notes/delete?id={{note.id}}"> supprimer </a>
+        <a href="{{path('edit_notes')}}?id={{note.id}}"> editer </a> &nbsp;&nbsp;
+        <a href="javascript:if(confirm('supprimer la note?')){document.location.href='{{path('delete_note')}}?id={{note.id}}'}"> supprimer </a>
       </div>
     {% endif %}
 

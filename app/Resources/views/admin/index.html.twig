@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-   
+
+<a href={{path('homepage')}}> Back to website </a>
 <div id="slide3" class="slide">
 <div class="listNote">
   {{ include('@views/default/notes_liste.html.twig', {'notes': notes}) }}

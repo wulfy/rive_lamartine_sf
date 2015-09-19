@@ -330,7 +330,7 @@ background-size: cover;
 
 #slide1{
   position: fixed;
-  z-index: -1;
+ /* z-index: -1;*/
 }
 
 .img_note{
@@ -662,10 +662,7 @@ background: linear-gradient(top,  rgba(247,247,247,1) 1%,rgba(242,242,242,1) 100
      -o-transition:all 0.2s linear;
         transition:all 0.2s linear;
 }
- #slide1{
-      background: url(./assets/images/fontaines2.jpg) no-repeat;
-      background-size: cover;
-    }
+ 
 
 input[type=submit]:hover{
 color:#686868;
@@ -734,11 +731,16 @@ background: linear-gradient(top,  rgba(234,234,234,1) 0%,rgba(242,242,242,1) 100
 
 @media only screen and (max-width: 480px) , screen and (max-height: 550px){
 
-
+  #slide1{
+      background: url(./assets/images/fontaines2.jpg) no-repeat;
+      background-size: cover;
+    }
 
      .videobg{
       display: none;
     }
+
+    
 
           .hvr-sweep-to-right {
         transform: translateX(200px);

@@ -22,12 +22,24 @@ class DefaultController extends Controller
         return $this->render('lamartineStoreBundle:Default:index.html.twig', array('name' => $name));
     }
 
+    protected function getRoles()
+    {
+    	$roles = $this->getParameter('roles');
+    	$roles_choice_array = [];
+    	foreach ($roles as $role) {
+    		$roles_choice_array[$role] = $role;
+    	}
+
+    	return $roles_choice_array;
+    }
+
     public function addUserAction(Request $request)
     {
     	$users = new Users();
     	$message = null;
-    	$roles = $this->getParameter('roles');
+    	$roles = $this->getRoles();
 
+    	
     	$form = $this->createFormBuilder($users)
     			->add('username', 'text',array('attr' => array('placeholder' => "username")))
     			->add('password', 'password',array('attr' => array('placeholder' => "password")))
@@ -40,8 +52,19 @@ class DefaultController extends Controller
                 ->add($this->submitText, 'submit')
                 ->getForm();
 
-        //if($this->handleStoreRequest($form,$request))
-         //	$message = "User successfully added";
+        $form->handleRequest($request);
+        if($form->isValid())
+        {
+        	$data = $form->getData();
+        	$encoder = $this->container->get('security.password_encoder');
+			$encoded = $encoder->encodePassword($data, $data->getPassword());
+			$data->setPassword($encoded);
+
+			if($this->storeData($data))
+         		$message = "User successfully added";
+        }
+
+        
 
 
         return $this->render('lamartineStoreBundle:Default:new.html.twig', array('form' => $form->createView(),'message' => $message));
@@ -58,28 +81,27 @@ class DefaultController extends Controller
                 ->add($this->submitText, 'submit')
                 ->getForm();
 
-         if($this->handleStoreRequest($form,$request))
-         	$message = "Note successfully added";
+        $form->handleRequest($request);
+        if($form->isValid())
+        {
+        	$data = $form->getData();
+
+			if($this->storeData($data))
+         		$message = "Note successfully added";
+        }
 
 
         return $this->render('lamartineStoreBundle:Default:new.html.twig', array('form' => $form->createView(),'message' => $message));
     }
 
 
-    protected function handleStoreRequest($form,Request $request)
+    protected function storeData($data)
     {
-    	$form->handleRequest($request);
-
-        if ($form->isValid()) {
             $em = $this->get('doctrine')->getManager('notes');
-            $note = $form->getData();
-            $em->persist($note);
+            $em->persist($data);
             $em->flush();
             
             return true;
-        }
-
-        return false;
     }
 
 

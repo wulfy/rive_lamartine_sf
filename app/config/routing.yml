@@ -1,6 +1,6 @@
 lamartine_store:
     resource: "@lamartineStoreBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /store
 
 app:
     resource: "@AppBundle/Controller/"

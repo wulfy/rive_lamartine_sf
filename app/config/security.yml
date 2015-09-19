@@ -30,6 +30,7 @@ security:
 
     access_control:
         - { path: /manage/*, roles: ROLE_ADMIN }
+        - { path: /store/*, roles: ROLE_ADMIN }
 
     providers:
         my_db_provider:

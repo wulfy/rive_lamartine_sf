@@ -117,7 +117,7 @@ class DefaultController extends Controller
 
     /**
      * @Route("/app/manage/notes", name="manage_notes")
-     *
+     * @Route("/app/manage/notes/edit", name="edit_notes")
      */
     public function manageNotesAction(Request $request)
     {
@@ -162,6 +162,7 @@ class DefaultController extends Controller
         return $this->render('admin/index.html.twig', array(
             'form' => $form->createView(),
             'notes' => $notes,
+            'message' => null,
         ));
 
     }

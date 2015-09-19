@@ -20,8 +20,12 @@
 	{% endimage %}
       
        <param name="wmode" value="transparent" /> 
+
+       {% image 'assets/images/fontaines2.jpg' %}
+       <img src="{{ asset_url }}" title="Your browser does not support the <video> tag">
+       {% endimage %}
        <!--[if lte IE 6 ]>
-       <embed src="http://www.youtube.com/v/HVMoJqg41Bw" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="400" height="222"></embed>
+       
        <![endif]--> 
        
      </video> 
