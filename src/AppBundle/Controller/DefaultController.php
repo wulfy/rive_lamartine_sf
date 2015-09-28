@@ -15,7 +15,7 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/app", name="homepage")
+     * @Route("/", name="homepage")
      */
     public function indexAction()
     {
@@ -59,7 +59,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/app/sendmail", name="mailer")
+     * @Route("/sendmail", name="mailer")
      * @Method({"POST"})
      */
     public function sendMailAction(Request $request)
@@ -84,7 +84,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/app/newNote", name="notes")
+     * @Route("/newNote", name="notes")
      *
      */
     public function newNotes(Request $request)
@@ -116,8 +116,8 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/app/manage/notes", name="manage_notes")
-     * @Route("/app/manage/notes/edit", name="edit_notes")
+     * @Route("/manage/notes", name="manage_notes")
+     * @Route("/manage/notes/edit", name="edit_notes")
      */
     public function manageNotesAction(Request $request)
     {
@@ -168,7 +168,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/app/manage/notes/delete", name="delete_note")
+     * @Route("/manage/notes/delete", name="delete_note")
      * @Method({"GET"})
      */
     public function deleteNoteAction(Request $request)
