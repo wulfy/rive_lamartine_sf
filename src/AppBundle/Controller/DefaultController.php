@@ -75,7 +75,7 @@ class DefaultController extends Controller
         $a = \Swift_Message::newInstance()
         ->setSubject('Contact site :'.$sujet)
         ->setFrom($email)
-        ->setTo('ludovic.lasry@gmail.com')
+        ->setTo('cs.rive.lamartine@gmail.com')
         ->setBody($this->renderView('default/email.txt.twig', array('nomprenom' => $nomprenom,'email' => $email, 'sujet' => $sujet, 'message' => $texte)),'text/html');
         //->setBody($this->renderView('HelloBundle:Hello:email.txt.twig', array('name' => $name)
         $this->get('mailer')->send($a);
