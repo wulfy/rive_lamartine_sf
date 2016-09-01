@@ -16,7 +16,7 @@ class DefaultController extends Controller
 {
 
     /**
-     * @Route("/app", name="homepage")
+     * @Route("/", name="homepage")
      */
     public function indexAction()
     {
@@ -61,7 +61,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/app/sendmail", name="mailer")
+     * @Route("/sendmail", name="mailer")
      * @Method({"POST"})
      */
     public function sendMailAction(Request $request)
@@ -77,7 +77,7 @@ class DefaultController extends Controller
         $a = \Swift_Message::newInstance()
         ->setSubject('Contact site :'.$sujet)
         ->setFrom($email)
-        ->setTo('ludovic.lasry@gmail.com')
+        ->setTo('cs.rive.lamartine@gmail.com')
         ->setBody($this->renderView('default/email.txt.twig', array('nomprenom' => $nomprenom,'email' => $email, 'sujet' => $sujet, 'message' => $texte)),'text/html');
         //->setBody($this->renderView('HelloBundle:Hello:email.txt.twig', array('name' => $name)
         $this->get('mailer')->send($a);
@@ -86,7 +86,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/app/newNote", name="notes")
+     * @Route("/newNote", name="notes")
      *
      */
     public function newNotes(Request $request)
@@ -119,8 +119,8 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/app/manage/notes", name="manage_notes")
-     * @Route("/app/manage/notes/edit", name="edit_notes")
+     * @Route("/manage/notes", name="manage_notes")
+     * @Route("/manage/notes/edit", name="edit_notes")
      */
     public function manageNotesAction(Request $request)
     {
@@ -171,7 +171,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/app/manage/notes/delete", name="delete_note")
+     * @Route("/manage/notes/delete", name="delete_note")
      * @Method({"GET"})
      */
     public function deleteNoteAction(Request $request)

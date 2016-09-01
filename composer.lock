@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "5ad3c8e020a1180b0bc0274db04ef160",
+    "content-hash": "2be6fb99f981b74cf8cac12f2a432a77",
     "packages": [
         {
             "name": "behat/behat",
@@ -1724,16 +1725,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.21.2",
+            "version": "v1.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "ddce1136beb8db29b9cd7dffa8ab518b978c9db3"
+                "reference": "b7fc2469fa009897871fb95b68237286fc54a5ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ddce1136beb8db29b9cd7dffa8ab518b978c9db3",
-                "reference": "ddce1136beb8db29b9cd7dffa8ab518b978c9db3",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b7fc2469fa009897871fb95b68237286fc54a5ad",
+                "reference": "b7fc2469fa009897871fb95b68237286fc54a5ad",
                 "shasum": ""
             },
             "require": {
@@ -1746,7 +1747,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.21-dev"
+                    "dev-master": "1.22-dev"
                 }
             },
             "autoload": {
@@ -1781,7 +1782,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-09-09 05:28:51"
+            "time": "2015-09-15 06:50:16"
         },
         {
             "name": "willdurand/jsonp-callback-validator",
@@ -1876,16 +1877,16 @@
     "packages-dev": [
         {
             "name": "atoum/atoum",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/atoum/atoum.git",
-                "reference": "162cd21d1f196e963946fd7c1c77eeee74fb596f"
+                "reference": "aeee39e47e319dcc74594c21d6e4db96cd3f9bc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/atoum/atoum/zipball/162cd21d1f196e963946fd7c1c77eeee74fb596f",
-                "reference": "162cd21d1f196e963946fd7c1c77eeee74fb596f",
+                "url": "https://api.github.com/repos/atoum/atoum/zipball/aeee39e47e319dcc74594c21d6e4db96cd3f9bc3",
+                "reference": "aeee39e47e319dcc74594c21d6e4db96cd3f9bc3",
                 "shasum": ""
             },
             "require": {
@@ -1951,7 +1952,7 @@
                 "test",
                 "unit testing"
             ],
-            "time": "2015-08-27 09:34:49"
+            "time": "2015-09-17 13:05:35"
         },
         {
             "name": "sensio/generator-bundle",
