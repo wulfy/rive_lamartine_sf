@@ -8,5 +8,5 @@ services:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 # keep your service names short
-    app.notes:
-        class: AppBundle\Utils\Notes
+#    app.notes:
+#        class: AppBundle\Utils\Notes

@@ -1,5 +1,6 @@
 imports:
-    - { resource: parameters.yml }
+ #   - { resource: parameters.yml }
+    - { resource: parameters_docker.yml }
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: '@lamartineStoreBundle/Resources/config/security.yml' }
@@ -98,9 +99,9 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     transport: smtp
-    host:      smtp.rive-lamartine.fr
-    username:  contact@rive-lamartine.fr
-    password:  .Sacdoss69
+    host:      "%mailer_host%"
+    username:  "%mailer_user%"
+    password:  "%mailer_password%"
     encryption: ssl
     spool:     { type: memory }
     logging:   "%kernel.debug%"

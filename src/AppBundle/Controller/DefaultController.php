@@ -14,6 +14,7 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class DefaultController extends Controller
 {
+
     /**
      * @Route("/app", name="homepage")
      */
@@ -21,22 +22,23 @@ class DefaultController extends Controller
     {
 
     	$notes1 = new Notes();
-    	$notes1->date = "20/07/15";
+    	$notes1->date = "20-07-15";
     	$notes1->title = "Mise en place des plaques";
-    	$notes1->imgsrc = "http://www.ppcaboutique.fr/images/porte/21812.jpg";
+    	$notes1->img = "http://www.ppcaboutique.fr/images/porte/21812.jpg";
     	$notes1->text = "La pose des plaques portes d'entrée + boite aux lettres + configuration de l'interphone à défilement sont prévus en fin de semaine.<br/><br/>
         <b>ATTENTION</b> Seules les personnes qui ont envoyé <a href=\"#\">ce formulaire</a> par mail auront leur plaques + nom sur l'interphone.";
 
     	$notes2 = new Notes();
-    	$notes2->date = "20/07/15";
+    	$notes2->date = "20-07-15";
     	$notes2->title = "Cartons!";
-    	$notes2->imgsrc = "http://www.voyage-yukon.net/blog/wp-content/uploads/2012/04/cartons.jpg";
+    	$notes2->img = "http://www.voyage-yukon.net/blog/wp-content/uploads/2012/04/cartons.jpg";
     	$notes2->text = "Pour rappel , il est interdit d'entreposer des cartons ou tout autre déchet dans le local à poubelle. Les poubelles sont réservées aux déchets ménagers et les cartons qui peuvent entrer dans les container recyclable. Les autres déchets doivent être jetés à la déchetterie de Sathonay camp (à 7min de fontaines).<br/>
         <img src='http://icon-park.com/imagefiles/location_map_pin_red6.png' class='mini'/>Itinéraire : <a href='#'> cliquez ici </a>";
 
         $notes = [];
         $notes[] = $notes1;
         $notes[] = $notes2;
+
 
         $notes = $this->getNotes();
         
@@ -93,6 +95,7 @@ class DefaultController extends Controller
         // crée une tâche et lui donne quelques données par défaut pour cet exemple
         $note = new Note();
         $note->setDate(new \DateTime('today'));
+        $submitText = "Add note";
 
         $form = $this->createFormBuilder($note)
             ->add('title', 'text')
@@ -124,7 +127,7 @@ class DefaultController extends Controller
 
         // crée une tâche et lui donne quelques données par défaut pour cet exemple
         $id = $request->query->get('id');
-        $submitText = "save";
+        $submitText = "Save";
         if(is_null($id))
         {
            $note = new Note();
