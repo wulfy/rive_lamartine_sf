@@ -12,3 +12,4 @@
 /src/lamartine/StoreBundle/Resources/.DS_Store
 .DS_Store
 /app/config/parameters_docker.yml
+/app/config/parameters_local.yml

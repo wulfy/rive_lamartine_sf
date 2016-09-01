@@ -1,6 +1,6 @@
 imports:
  #   - { resource: parameters.yml }
-    - { resource: parameters_docker.yml }
+    - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: '@lamartineStoreBundle/Resources/config/security.yml' }
