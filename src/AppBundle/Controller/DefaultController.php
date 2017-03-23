@@ -10,6 +10,10 @@ use AppBundle\Utils\Notes;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use lamartine\StoreBundle\Entity\Note;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 
 class DefaultController extends Controller
@@ -143,11 +147,11 @@ class DefaultController extends Controller
        
 
         $form = $this->createFormBuilder($note)
-            ->add('title', 'text',array('attr' => array('placeholder' => "Titre de l affiche")))
-                ->add('date', 'date')
-                ->add('img', 'text' , array('required' => false , 'attr' => array('placeholder' => "URL de l'image")))
-                ->add('text', 'textarea', array('attr' => array('placeholder' => 'Texte html')))
-                ->add($submitText, 'submit')
+            ->add('title', TextType::class,array('attr' => array('placeholder' => "Titre de l affiche")))
+                ->add('date', DateType::class)
+                ->add('img', TextType::class , array('required' => false , 'attr' => array('placeholder' => "URL de l'image")))
+                ->add('text', TextareaType::class, array('attr' => array('placeholder' => 'Texte html')))
+                ->add($submitText, SubmitType::class)
                 ->getForm();
 
         $form->handleRequest($request);

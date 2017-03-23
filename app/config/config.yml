@@ -58,6 +58,8 @@ assetic:
 doctrine:
     dbal:
         connections:
+            default:
+                server_version: 5.7
             notes:
                 driver:   pdo_mysql
                 host:     "%database_host%"
@@ -66,6 +68,7 @@ doctrine:
                 user:     "%database_user%"
                 password: "%database_password%"
                 charset:  UTF8
+                server_version: 5.7
             test:
                 driver:   pdo_mysql
                 host:     "%database_host%"
@@ -74,6 +77,7 @@ doctrine:
                 user:     "%database_user%"
                 password: "%database_password%"
                 charset:  UTF8
+                server_version: 5.7
     orm:
         entity_managers:
             notes:
